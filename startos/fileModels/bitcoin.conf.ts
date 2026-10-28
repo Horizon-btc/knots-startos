@@ -527,7 +527,7 @@ export const fullConfigSpec = sdk.InputSpec.of({
     integer: true,
     units: i18n('timestamp'),
   }),
-  
+
   zmqEnabled: Value.triState({
     name: i18n('ZeroMQ Enabled'),
     description: i18n(

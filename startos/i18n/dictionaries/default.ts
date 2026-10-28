@@ -421,7 +421,6 @@ const dict = {
   'Blocks Only': 2912,
   'Reduce bandwidth by not relaying transactions. Blocks will still be downloaded and validated normally. Disables the mempool, wallet transaction broadcasting, and fee estimation.': 2913,
   Default: 2914,
-
 } as const
 
 /**

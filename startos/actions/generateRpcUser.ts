@@ -88,6 +88,7 @@ export const generateRpcUser = sdk.Action.withInput(
           copyable: true,
           masked: true,
           qr: false,
+          launchable: false,
         },
       }
     }
