@@ -312,6 +312,8 @@ export default {
     1567: 'Blocks',
     1568: 'Rechazar ramas muertas',
     1569: 'Contar los datos de una rama condicional que una constante apilada hace inalcanzable como bytes de portador de datos; el sobre OP_FALSE OP_IF se cuenta de todos modos',
+    1570: 'Rechazar BPUB',
+    1571: 'Contar los scripts testigo de las entradas que llevan un archivo BPUB como bytes de portador de datos no estándar',
     // Knots other additions
     1741: 'Software Expiry',
     1742: 'Stop working after this POSIX timestamp (set to 0 to disable)',
@@ -721,6 +723,8 @@ export default {
     1567: 'Blocks',
     1568: 'Tote Zweige ablehnen',
     1569: 'Daten in einem bedingten Zweig, den eine auf den Stack gelegte Konstante unerreichbar macht, als Data-Carrier-Bytes zählen; die OP_FALSE OP_IF-Hülle wird in jedem Fall gezählt',
+    1570: 'BPUB ablehnen',
+    1571: 'Die Witness-Skripte von Inputs, die eine BPUB-Datei tragen, als nicht standardmäßige Data-Carrier-Bytes zählen',
     // Knots other additions
     1741: 'Software Expiry',
     1742: 'Stop working after this POSIX timestamp (set to 0 to disable)',
@@ -1130,6 +1134,8 @@ export default {
     1567: 'Blocks',
     1568: 'Odrzucać martwe gałęzie',
     1569: 'Licz dane w gałęzi warunkowej, którą stała umieszczona na stosie czyni nieosiągalną, jako bajty nośnika danych; koperta OP_FALSE OP_IF jest liczona w każdym przypadku',
+    1570: 'Odrzucać BPUB',
+    1571: 'Licz skrypty świadka wejść, które niosą plik BPUB, jako niestandardowe bajty nośnika danych',
     // Knots other additions
     1741: 'Software Expiry',
     1742: 'Stop working after this POSIX timestamp (set to 0 to disable)',
@@ -1539,6 +1545,8 @@ export default {
     1567: 'Blocks',
     1568: 'Rejeter les branches mortes',
     1569: "Compter les données d'une branche conditionnelle qu'une constante empilée rend inaccessible comme octets de porteur de données ; l'enveloppe OP_FALSE OP_IF est comptée dans tous les cas",
+    1570: 'Rejeter BPUB',
+    1571: 'Compter les scripts témoin des entrées qui portent un fichier BPUB comme octets de porteur de données non standard',
     // Knots other additions
     1741: 'Software Expiry',
     1742: 'Stop working after this POSIX timestamp (set to 0 to disable)',

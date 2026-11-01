@@ -29,6 +29,7 @@ export const mempoolConfig = sdk.Action.withInput(
     rejectparasites: true,
     rejecttokens: true,
     rejectdeadbranches: true,
+    rejectbpub: true,
     mempoolreplacement: true,
     mempooltruc: true,
     permitbareanchor: true,

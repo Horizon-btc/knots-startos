@@ -251,6 +251,8 @@ const dict = {
   Blocks: 1567,
   'Reject Dead Branches': 1568,
   'Count data in a conditional branch that a pushed constant makes unreachable as data carrier bytes; the OP_FALSE OP_IF envelope is counted either way': 1569,
+  'Reject BPUB': 1570,
+  'Count the witness scripts of inputs that carry a BPUB file as non-standard data carrier bytes': 1571,
 
   // actions/config/rpc.ts
   'Rpc Server Timeout': 1600,
