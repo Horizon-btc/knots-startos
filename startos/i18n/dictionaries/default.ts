@@ -249,6 +249,8 @@ const dict = {
   'Min Relay Maturity': 1565,
   'Minimum number of blocks that inputs must mature before being spent in transactions we relay': 1566,
   Blocks: 1567,
+  'Reject Dead Branches': 1568,
+  'Count data in a conditional branch that a pushed constant makes unreachable as data carrier bytes; the OP_FALSE OP_IF envelope is counted either way': 1569,
 
   // actions/config/rpc.ts
   'Rpc Server Timeout': 1600,

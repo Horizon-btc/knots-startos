@@ -28,6 +28,7 @@ export const mempoolConfig = sdk.Action.withInput(
     permitbaredatacarrier: true,
     rejectparasites: true,
     rejecttokens: true,
+    rejectdeadbranches: true,
     mempoolreplacement: true,
     mempooltruc: true,
     permitbareanchor: true,
