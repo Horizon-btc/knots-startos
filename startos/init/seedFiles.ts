@@ -7,17 +7,14 @@ import {
   diskUsage,
   minPrune,
 } from '../fileModels/bitcoin.conf'
-import { i2pdConfFile } from '../fileModels/i2pd.conf'
 import { storeJson } from '../fileModels/store.json'
 import { sdk } from '../sdk'
-import { i2PSamAddress } from '../utils'
 
 export const seedFiles = sdk.setupOnInit(async (effects, kind) => {
   if (!kind) return
 
   // install, update, restore
   await storeJson.merge(effects, {})
-  await i2pdConfFile.merge(effects, {})
 
   if (kind === 'install') {
     await bitcoinConfFile.merge(effects, {
@@ -28,11 +25,11 @@ export const seedFiles = sdk.setupOnInit(async (effects, kind) => {
       natpmp: false,
       datacarriercost: defaultDatacarriercost,
       prune: (await diskUsage()).total < archivalMin ? minPrune : 0,
-      raw: {
-        i2psam: i2PSamAddress,
-      },
     })
   } else {
-    await bitcoinConfFile.merge(effects, {})
+    // Remove the SAM settings that made bitcoind generate its own address.
+    await bitcoinConfFile.merge(effects, {
+      raw: { i2psam: undefined, i2pacceptincoming: undefined },
+    })
   }
 })

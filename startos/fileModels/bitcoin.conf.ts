@@ -4,7 +4,6 @@ import { totalmem } from 'os'
 import { i18n } from '../i18n'
 import { sdk } from '../sdk'
 import {
-  i2PSamAddress,
   peerPortInternal,
   peerPortLocal,
   rpcallowip,
@@ -139,7 +138,10 @@ export const shape = z
       .optional()
       .catch(undefined),
     blocksonly: iniBoolean,
-    i2psam: z.literal(i2PSamAddress).optional().catch(undefined),
+    // Deprecated. A set i2psam made bitcoind mint its own I2P destination.
+    // Inbound now uses only the .b32.i2p address I2Pd exports. Kept so an
+    // old file still parses; formToFile strips both on every write.
+    i2psam: z.string().optional().catch(undefined),
     i2pacceptincoming: iniBoolean,
 
     // Wallet
@@ -1169,6 +1171,11 @@ function formToFile(
 
   return {
     ...raw,
+
+    // Drop the retired SAM settings so a rewrite cannot revive the
+    // self-generated I2P destination.
+    i2psam: undefined,
+    i2pacceptincoming: undefined,
 
     // Enforced fields
     rpccookiefile: '.cookie',

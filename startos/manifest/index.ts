@@ -10,7 +10,7 @@ export const manifest = setupManifest({
   upstreamRepo: 'https://github.com/bitcoinknots/bitcoin',
   marketingUrl: 'https://bitcoinknots.org/',
   description: { short, long },
-  volumes: ['main', 'i2pd'],
+  volumes: ['main'],
   images: {
     bitcoind: {
       source: {
@@ -37,13 +37,6 @@ export const manifest = setupManifest({
       },
       arch: ['x86_64', 'aarch64', 'riscv64'],
       emulateMissing: false,
-    },
-    i2pd: {
-      source: {
-        dockerTag: 'purplei2p/i2pd:release-2.58.0',
-      },
-      arch: ['x86_64', 'aarch64'],
-      emulateMissing: true,
     },
   },
 })

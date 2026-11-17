@@ -19,6 +19,19 @@ export const long = {
     "Bitcoin est un réseau de paiement innovant et un nouveau type d'argent. Bitcoin utilise la technologie peer-to-peer pour fonctionner sans autorité centrale ni banques. La gestion des transactions et l'émission de bitcoins sont effectuées collectivement par le réseau. Bitcoin est open-source ; sa conception est publique, personne ne possède ni ne contrôle Bitcoin et tout le monde peut y participer. Grâce à ses nombreuses propriétés uniques, Bitcoin permet des utilisations passionnantes qui ne pourraient être couvertes par aucun système de paiement précédent.",
 }
 
+export const i2pDescription = {
+  en_US:
+    'Required for .b32.i2p peer connectivity, onlynet=i2p, or when an I2P address is requested.',
+  es_ES:
+    'Requerido para conectividad de pares .b32.i2p, onlynet=i2p, o cuando se solicita una dirección I2P.',
+  de_DE:
+    'Erforderlich für .b32.i2p Peer-Konnektivität, onlynet=i2p oder wenn eine I2P-Adresse angefordert wird.',
+  pl_PL:
+    'Wymagany dla połączeń .b32.i2p z peerami, onlynet=i2p lub gdy żądany jest adres I2P.',
+  fr_FR:
+    "Requis pour la connectivité .b32.i2p entre pairs, onlynet=i2p, ou lorsqu'une adresse I2P est demandée.",
+}
+
 export const torDescription = {
   en_US:
     'Required for .onion peer connectivity, onlynet=onion, or when a Tor address is requested.',

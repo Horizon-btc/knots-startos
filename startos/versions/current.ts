@@ -3,9 +3,9 @@ import { rm } from 'fs/promises'
 import { bitcoinConfFile } from '../fileModels/bitcoin.conf'
 
 export const current = VersionInfo.of({
-  version: '#knots:29.5.0:3',
+  version: '#knots:29.5.0:5',
   releaseNotes: {
-    en_US: `Update to Bitcoin Knots v29.5.knots20260508`,
+    en_US: `I2P uses the standalone I2Pd service. Bitcoin no longer creates its own I2P address or exposes I2P SAM settings. Add a .b32.i2p address on the Peer interface for inbound connections.`,
   },
   migrations: {
     up: async ({ effects }) => {},

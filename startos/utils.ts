@@ -8,7 +8,6 @@ import { sdk } from './sdk'
 export const rpcHostId = 'rpc'
 export const peerHostId = 'peer'
 export const zmqHostId = 'zmq'
-export const i2pConsoleHostId = 'i2p-console'
 
 /**
  * The whitelisted p2p listener, for services on the LXC bridge. Bound without
@@ -49,13 +48,6 @@ export const rpcallowipPruned = '127.0.0.1/32'
 
 export const rootDir = '/root/.bitcoin'
 export const rpccookiefile = '.cookie'
-
-export const i2pSamPort = 7656
-export const i2pUiPort = 7070
-export const i2pControlPort = 7650
-export const i2pSocksPort = 4447
-
-export const i2PSamAddress = `127.0.0.1:${i2pSamPort}`
 
 export const bitcoinMounts = sdk.Mounts.of().mountVolume({
   volumeId: 'main',

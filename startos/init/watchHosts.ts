@@ -4,8 +4,8 @@ import { peerHostId, peerInterfaceId } from '../utils'
 
 export const watchHosts = sdk.setupOnInit(async (effects, kind) => {
   // One subscription on the peer host; the map fn returns just the advertised
-  // externalip list (onions + public IPv4), so this re-runs only when that
-  // list changes rather than on unrelated host churn.
+  // externalip list (onions, user-created I2P addresses, and public IPv4), so
+  // this re-runs only when that list changes rather than on unrelated host churn.
   const externalip = await sdk.host
     .getOwn(effects, peerHostId, (host) => {
       const iface =
@@ -19,10 +19,7 @@ export const watchHosts = sdk.setupOnInit(async (effects, kind) => {
       })
       return [
         ...publicInfo
-          .filter({
-            predicate: ({ metadata }) =>
-              metadata.kind === 'plugin' && metadata.packageId === 'tor',
-          })
+          .matchesAny([{ pluginId: 'tor' }, { pluginId: 'i2pd' }])
           .format(),
         ...publicInfo.filter({ kind: 'ipv4' }).format(),
       ]

@@ -9,7 +9,7 @@
 ## What you get on StartOS
 
 - A full Bitcoin Knots node with three interfaces: **RPC Interface** (JSON-RPC for wallets and dependent services), **Peer Interface** (the network port other nodes connect to), and **ZeroMQ Interface** (block/transaction notifications, when ZMQ is enabled).
-- An embedded **i2pd** sidecar that brings up I2P transport automatically — your node accepts inbound peers over I2P out of the box, with a separate **I2P Daemon Console** interface available when you turn the i2pd web console on.
+- I2P through the standalone **I2Pd** service. The node reaches I2P peers through that service and does not create an I2P address of its own. Add a `.b32.i2p` address on the Peer Interface to advertise yourself for inbound I2P connections. Router settings and the web console live on the I2Pd service.
 - An automatic Tor outbound proxy (your node reaches `.onion` peers without configuration); add a `.onion` to the Peer Interface to advertise yourself and accept inbound Tor connections too.
 - Disk-aware defaults: on disks smaller than 900 GB the package enables pruning and disables `txindex`; on larger disks you get a full archival node. The transition is transparent — pruned nodes route RPC through a small `btc-rpc-proxy` sidecar so port 8332 always serves RPC the same way.
 - Shared `bitcoind` package id with Bitcoin Core — you can switch flavors without re-syncing the chain.
@@ -19,7 +19,7 @@
 Bitcoin Knots starts and begins Initial Block Download (IBD) immediately on install.
 
 1. Start the service. Open the Dashboard and watch the sync progress.
-2. If you want inbound clearnet peers, add a public IP or hostname on the **Peer Interface**. If you want inbound Tor peers, add a `.onion` there.
+2. If you want inbound clearnet peers, add a public IP or hostname on the **Peer Interface**. If you want inbound Tor peers, add a `.onion` there. If you want inbound I2P peers, add a `.b32.i2p` there.
 3. If you want to expose RPC to a wallet or dependent service that doesn't use the cookie file, run **Generate RPC User Credentials** and supply the username/password to the consumer.
 
 > Initial Block Download takes hours to days depending on hardware and network. The node is functional immediately but RPC calls that depend on chain state will return partial results until sync completes.
@@ -35,7 +35,7 @@ The **RPC Interface** is where wallets, indexers, Lightning nodes, and other dep
 Four configuration actions cover the full set of editable `bitcoin.conf` values, grouped to be navigable:
 
 - **Mempool Settings** — Knots' policy controls (OP_RETURN limits, parasite/token filters, replacement rules, ancestor/descendant limits, dust relay fee, etc.) plus standard mempool sizing.
-- **Peer Settings** — `onlynet`, BIP324 v2 transport, I2P SAM proxy on/off, manual peers, max connections.
+- **Peer Settings** — `onlynet`, BIP324 v2 transport, manual peers, max connections. Inbound I2P uses a `.b32.i2p` address on the Peer Interface, not a setting here.
 - **RPC Settings** — RPC threads, work queue, server timeout.
 - **Other Settings** — ZMQ, txindex, block templates, coinstats index, block filters (BIP158/157), pruning, dbcache, wallet master switches, NAT-PMP, max upload target, and more.
 
@@ -73,4 +73,4 @@ Every action above acts on the currently selected wallet, so if you run more tha
 ## Limitations
 
 - **Wallet actions cover hot-wallet basics only.** Anything beyond the listed actions (coin control, PSBTs, multisig, hardware-wallet flows) needs an external wallet talking to the RPC interface.
-- **Advanced i2pd tuning is not exposed.** Bandwidth class, transit share, floodfill, console, and tunnel limits are baked into the bundled `i2pd.conf`. To change them, edit `i2pd.conf` on the `i2pd` volume directly.
+- **I2P router settings live on the I2Pd service.** Bandwidth, transit, floodfill, and the router console are configured there, not in Bitcoin Knots. An embedded router from an older version of this package is not migrated; I2Pd creates its own identity.

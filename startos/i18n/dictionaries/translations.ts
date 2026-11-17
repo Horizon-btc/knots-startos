@@ -411,6 +411,9 @@ export default {
     2916: 'Construyendo la base de datos de la red',
     2917: 'No se encontraron pares. El enrutador no pudo contactar con ningún servidor de resiembra, lo que suele significar que este servidor no puede resolver DNS. Revise Sistema > Servidores DNS.',
     2918: 'El enrutador I2P informó del estado de error ${status}',
+    2919: 'I2P no está en ejecución',
+    2920: 'I2P no está instalado',
+    2921: 'Solo saliente. Agregue una dirección I2P para habilitar entrante.',
   } satisfies LangDict,
   de_DE: {
     // main.ts
@@ -822,6 +825,9 @@ export default {
     2916: 'Netzwerkdatenbank wird aufgebaut',
     2917: 'Keine Peers gefunden. Der Router konnte keinen Reseed-Server erreichen, was in der Regel bedeutet, dass dieser Server keine DNS-Namen auflösen kann. Prüfen Sie System > DNS-Server.',
     2918: 'Der I2P-Router meldete den Fehlerstatus ${status}',
+    2919: 'I2P läuft nicht',
+    2920: 'I2P ist nicht installiert',
+    2921: 'Nur ausgehend. Fügen Sie eine I2P-Adresse hinzu, um eingehende Verbindungen zu ermöglichen.',
   } satisfies LangDict,
   pl_PL: {
     // main.ts
@@ -1233,6 +1239,9 @@ export default {
     2916: 'Budowanie bazy danych sieci',
     2917: 'Nie znaleziono węzłów. Router nie mógł połączyć się z żadnym serwerem reseed, co zwykle oznacza, że ten serwer nie rozwiązuje nazw DNS. Sprawdź System > Serwery DNS.',
     2918: 'Router I2P zgłosił status błędu ${status}',
+    2919: 'I2P nie jest uruchomiony',
+    2920: 'I2P nie jest zainstalowany',
+    2921: 'Tylko wychodzące. Dodaj adres I2P, aby włączyć przychodzące.',
   } satisfies LangDict,
   fr_FR: {
     // main.ts
@@ -1644,5 +1653,8 @@ export default {
     2916: 'Construction de la base de données du réseau',
     2917: "Aucun pair trouvé. Le routeur n'a pu joindre aucun serveur de réamorçage, ce qui signifie généralement que ce serveur ne peut pas résoudre les noms DNS. Vérifiez Système > Serveurs DNS.",
     2918: "Le routeur I2P a signalé le statut d'erreur ${status}",
+    2919: "I2P n'est pas en cours d'exécution",
+    2920: "I2P n'est pas installé",
+    2921: 'Sortant uniquement. Ajoutez une adresse I2P pour activer les connexions entrantes.',
   } satisfies LangDict,
 }
