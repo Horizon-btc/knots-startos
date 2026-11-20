@@ -592,7 +592,7 @@ export const fullConfigSpec = sdk.InputSpec.of({
         max: 3_985_000,
         integer: true,
         units: i18n('Bytes'),
-        footnote: `${i18n('Default')}: 100,000 Bytes`,
+        footnote: `${i18n('Default')}: 300,000 Bytes`,
       }),
       blockmaxweight: Value.number({
         name: i18n('Max Block Weight'),
@@ -603,7 +603,7 @@ export const fullConfigSpec = sdk.InputSpec.of({
         max: 3_985_000,
         integer: true,
         units: i18n('vBytes'),
-        footnote: `${i18n('Default')}: 100,000 vBytes`,
+        footnote: `${i18n('Default')}: 1,200,000 vBytes`,
       }),
     }),
   ),
