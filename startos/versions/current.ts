@@ -3,9 +3,9 @@ import { rm } from 'fs/promises'
 import { bitcoinConfFile } from '../fileModels/bitcoin.conf'
 
 export const current = VersionInfo.of({
-  version: '#knots:29.5.1:1',
+  version: '#knots:29.5.1:2',
   releaseNotes: {
-    en_US: `Update to bitcoinknots v29.5.1.20260508rc1`,
+    en_US: `Update to bitcoinknots v29.5.1.20260508, contain important security fixes.`,
   },
   migrations: {
     up: async ({ effects }) => {},
